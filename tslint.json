@@ -11,6 +11,7 @@
     "no-console": false,
     "no-empty": false,
     "ordered-imports": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "jsx-self-close": false
   }
 }

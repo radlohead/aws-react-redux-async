@@ -1,0 +1,25 @@
+.TabMenu {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 15px;
+    list-style: none;
+
+    li {
+        display: inline-block;
+        padding: 15px 20px;
+        border: 1px solid #bdbdbd;
+        background-color: #f8f8f8;
+        cursor: pointer;
+
+        &.active {
+            background-color: #fff;
+            color: #0eaeb9;
+        }
+
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './components/ProductTab';
-import './index.css';
+import App from './containers/App';
+import './index.scss';
 
 import registerServiceWorker from './registerServiceWorker';
 
