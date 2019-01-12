@@ -1,37 +1,35 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { ProductTab, RankingTab, TabMenu } from '../components/ComponentsList';
+import ContainerTab from './ContainerTab';
 import * as actions from '../actions';
 
 class App extends React.Component {
+    public componentDidMount(): void {
+        // console.log('componentDidMount', this.props);
+        const { dispatch }: any = this.props;
+        dispatch(actions.fetchItemsNeed());
+    }
+
     public render(): JSX.Element {
-        const { onCurrentTab, currentTab }: any = this.props;
-        console.log('render', this.props, currentTab);
+        // const { currentTab }: any = this.props;
+        console.log('render', this.props);
 
         return (
             <>
-                <TabMenu
-                    currentTab={currentTab}
-                    onCurrentTab={onCurrentTab}
-                />
-                <ProductTab />
-                <RankingTab />
+                <ContainerTab />
             </>
         )
     }
 }
 
-const mapStateToProps = (state: any) => {
-    console.log('App', state);
-    return {
-        currentTab: state ? state.currentTab : 'PRODUCT_TAB'
-    }
-}
+// const mapStateToProps = (state: any) => {
+//     console.log('App', state);
+//     return {
+//         currentTab: state ? state.currentTab : 'PRODUCT_TAB',
+//         json: state ? state.json : {}
+//     }
+// }
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        onCurrentTab: (tabName: string) => dispatch(actions.currentTab(tabName))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+    // mapStateToProps
+)(App);
