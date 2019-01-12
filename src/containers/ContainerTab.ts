@@ -6,8 +6,8 @@ const mapStateToProps = (state: any) => {
     console.log('ContainerTabMenu', state);
     return {
         currentTab: state ? state.currentTab : 'PRODUCT_TAB',
-        json: state ? state.json : {}
-        // json: state ? state.json : {}
+        productTabItemsJSON: state && state.productTabItemsJSON,
+        rankingTabItemsJSON: state && state.rankingTabItemsJSON
     }
 }
 

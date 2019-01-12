@@ -1,35 +1,51 @@
 export const SELECT_TAB = 'SELECT_TAB';
 
 export const currentTab = (tabName: any) => {
-    console.log('action', tabName);
-
     return {
         type: SELECT_TAB,
         currentTab: tabName
     }
 }
 
-export const receiveItems = (json: any) => {
-    console.log('receiveItems', json);
+export const receiveProductTabItems = (json: any) => {
     return {
         type: SELECT_TAB,
-        json
+        productTabItemsJSON: json
     }
 }
 
-export const fetchItems = () => (dispatch: any) => {
+export const fetchProductTabItems = () => (dispatch: any) => {
     return fetch('http://localhost:3003/data')
         .then(response => {
             return response.json();
         })
         .then(json => {
-            console.log('action, async', json);
-            return dispatch(receiveItems(json));
+            return dispatch(receiveProductTabItems(json));
+        });
+}
+
+export const receiveRankingTabItems = (json: any) => {
+    return {
+        type: SELECT_TAB,
+        rankingTabItemsJSON: json
+    }
+}
+
+export const fetchRankingTabItems = () => (dispatch: any) => {
+    return fetch('http://localhost:3004/data')
+        .then(response => {
+            return response.json()
+        })
+        .then(json => {
+            return dispatch(receiveRankingTabItems(json));
         });
 }
 
 export const fetchItemsNeed = () => (dispatch: any) => {
-    return dispatch(fetchItems());
+    return (
+        dispatch(fetchProductTabItems()),
+        dispatch(fetchRankingTabItems())
+    )
 }
 
 

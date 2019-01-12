@@ -1,9 +1,7 @@
 import * as React from 'react';
-
 import './TabMenu.scss';
 
 const TabMenu = ({ currentTab, onCurrentTab }: any) => {
-    console.log('TabMenu', currentTab, onCurrentTab);
     return (
         <>
             <ul className='TabMenu'>

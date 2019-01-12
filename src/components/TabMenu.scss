@@ -1,13 +1,20 @@
 .TabMenu {
-    text-align: right;
+    float: right;
     margin: 0;
     padding: 0;
     padding-top: 10px;
     padding-right: 15px;
     list-style: none;
 
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
     li {
-        display: inline-block;
+        display: block;
+        float: left;
         padding: 15px 20px;
         border: 1px solid #bdbdbd;
         background-color: #f8f8f8;

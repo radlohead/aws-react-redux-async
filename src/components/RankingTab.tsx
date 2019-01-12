@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './RankingTab.scss';
 
-const RankingTab = () => {
+const RankingTab = (json: any) => {
+    console.log('rankingTab', json);
     return (
         <div className='RankingTab'>RankingTab</div>
     )
