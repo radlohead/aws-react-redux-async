@@ -4,7 +4,7 @@ import ContainerTab from './ContainerTab';
 import * as actions from '../actions';
 
 class App extends React.Component {
-    public componentDidMount(): void {
+    public componentWillMount(): void {
         const { dispatch }: any = this.props;
         dispatch(actions.fetchItemsNeed());
     }
@@ -18,4 +18,4 @@ class App extends React.Component {
     }
 }
 
-export default connect()(App);
+export default connect(null)(App);

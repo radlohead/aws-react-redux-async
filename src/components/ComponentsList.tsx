@@ -4,6 +4,7 @@ import RankingTab from './RankingTab';
 import TabMenu from './TabMenu';
 
 const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: any) => {
+    console.log('ComponentsList', productTabItemsJSON);
     return (
         <>
             <TabMenu 

@@ -2,13 +2,18 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import ComponentsList from '../components/ComponentsList';
 
-const mapStateToProps = (state: any) => {
-    console.log('ContainerTabMenu', state);
-    return {
-        currentTab: state ? state.currentTab : 'PRODUCT_TAB',
-        productTabItemsJSON: state && state.productTabItemsJSON,
-        rankingTabItemsJSON: state && state.rankingTabItemsJSON
+const mapStateToProps = (state: any): any => {
+    let result: any = {};
+    
+    if (state) {
+        result = {
+            currentTab: state ? state.currentTab : 'PRODUCT_TAB',
+            productTabItemsJSON: state && state.productTabItemsJSON,
+            rankingTabItemsJSON: state && state.rankingTabItemsJSON
+        }
     }
+
+    return result;
 }
 
 const mapDispatchToProps = (dispatch: any) => {

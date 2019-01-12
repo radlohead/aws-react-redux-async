@@ -7,6 +7,7 @@ const initialState = {
 const reducers = (state = initialState, action: any): any => {
     switch(action.type) {
         case SELECT_TAB:
+        console.log(state, action);
             return {
                 ...state,
                 ...action
