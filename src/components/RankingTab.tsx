@@ -3,7 +3,7 @@ import './RankingTab.scss';
 
 const RankingTab = () => {
     return (
-        <div className="RankingTab">RankingTab</div>
+        <div className='RankingTab'>RankingTab</div>
     )
 }
 

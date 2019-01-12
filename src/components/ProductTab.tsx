@@ -3,7 +3,7 @@ import './ProductTab.scss';
 
 const ProductTab = () => {
     return (
-        <div className="ProductTab">ProductTab</div>
+        <div className='ProductTab'>ProductTab</div>
     )
 }
 
