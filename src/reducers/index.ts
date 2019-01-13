@@ -1,4 +1,4 @@
-import { SELECT_TAB } from '../actions';
+import { DAILYLOOK } from '../actions';
 
 const initialState = {
     currentTab: 'PRODUCT_TAB'
@@ -6,7 +6,7 @@ const initialState = {
 
 const reducers = (state = initialState, action: any): any => {
     switch(action.type) {
-        case SELECT_TAB:
+        case DAILYLOOK:
             return {
                 ...state,
                 ...action

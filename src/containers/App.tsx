@@ -6,7 +6,7 @@ import * as actions from '../actions';
 class App extends React.Component {
     public componentWillMount(): void {
         const { dispatch }: any = this.props;
-        dispatch(actions.fetchItemsNeed());
+        dispatch(actions.fetchItemsCall());
     }
 
     public render(): JSX.Element {

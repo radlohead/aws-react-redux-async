@@ -1,15 +1,15 @@
-export const SELECT_TAB = 'SELECT_TAB';
+export const DAILYLOOK = 'DAILYLOOK';
 
 export const currentTab = (tabName: any) => {
     return {
-        type: SELECT_TAB,
+        type: DAILYLOOK,
         currentTab: tabName
     }
 }
 
 export const receiveProductTabItems = (json: any) => {
     return {
-        type: SELECT_TAB,
+        type: DAILYLOOK,
         productTabItemsJSON: json
     }
 }
@@ -26,7 +26,7 @@ export const fetchProductTabItems = () => (dispatch: any) => {
 
 export const receiveRankingTabItems = (json: any) => {
     return {
-        type: SELECT_TAB,
+        type: DAILYLOOK,
         rankingTabItemsJSON: json
     }
 }
@@ -41,7 +41,7 @@ export const fetchRankingTabItems = () => (dispatch: any) => {
         });
 }
 
-export const fetchItemsNeed = () => (dispatch: any) => {
+export const fetchItemsCall = () => (dispatch: any) => {
     Promise.all([
         dispatch(fetchProductTabItems()),
         dispatch(fetchRankingTabItems())
