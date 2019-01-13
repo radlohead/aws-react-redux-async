@@ -1,7 +1,7 @@
-import { DAILYLOOK } from '../actions';
+import { PRODUCT_TAB, DAILYLOOK } from '../actions';
 
 const initialState = {
-    currentTab: 'PRODUCT_TAB'
+    currentTab: PRODUCT_TAB
 }
 
 const reducers = (state = initialState, action: any): any => {

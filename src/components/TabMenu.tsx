@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as moment from 'moment';
+import { PRODUCT_TAB, RANKING_TAB } from '../actions';
 import '../css/tabMenu.scss';
 
 const TabMenu = ({ currentTab, onCurrentTab }: any) => {
@@ -14,11 +15,11 @@ const TabMenu = ({ currentTab, onCurrentTab }: any) => {
                 </div>
                 <ul className='tab__header__menu'>
                     <li 
-                        className={currentTab === 'PRODUCT_TAB' ? 'active' : ''}
-                        onClick={() => onCurrentTab('PRODUCT_TAB')}>상품</li>
+                        className={currentTab === PRODUCT_TAB ? 'active' : ''}
+                        onClick={() => onCurrentTab(PRODUCT_TAB)}>상품</li>
                     <li 
-                        className={currentTab === 'RANKING_TAB' ? 'active' : ''}
-                        onClick={() => onCurrentTab('RANKING_TAB')}>랭킹</li>
+                        className={currentTab === RANKING_TAB ? 'active' : ''}
+                        onClick={() => onCurrentTab(RANKING_TAB)}>랭킹</li>
                 </ul>
             </div>
         </>

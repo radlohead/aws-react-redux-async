@@ -1,4 +1,6 @@
 export const DAILYLOOK = 'DAILYLOOK';
+export const PRODUCT_TAB = 'PRODUCT_TAB';
+export const RANKING_TAB = 'RANKING_TAB';
 
 export const currentTab = (tabName: any) => {
     return {
