@@ -8,6 +8,7 @@
 
 .ranking__tab__item {
     overflow: hidden;
+    position: relative;
     padding: 10px 0 15px;
     border-bottom: 1px solid $ColorBlack20;
 }
@@ -48,15 +49,17 @@
 .ranking__tab__img {
     float: left;
     width: 30%;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 100px;
+    max-height: 100px;
     border-radius: 10px;
 }
 
 .ranking__tab--right {
+    position: absolute;
+    top: 50%;
+    left: 170px;
     float: left;
-    margin-left: 15px;
-    transform: translateY(50%);
+    transform: translateY(-50%);
 
     &__description {
         display: block;

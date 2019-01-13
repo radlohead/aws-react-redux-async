@@ -63,6 +63,7 @@
         bottom: 15px;
         left: 15px;
         color: $ColorWhiteBase;
+        text-shadow: 1px 1px 2px $ColorBlack10;
     }
 
     .product__tab__list__item__img {
@@ -83,6 +84,7 @@
         margin-bottom: 5px;
         color: $ColorWhiteBase;
         font-size: 18px;
+        text-shadow: 1px 1px 2px $ColorBlack10;
     }
 
     &__title {
@@ -90,5 +92,6 @@
         color: $ColorWhiteBase;
         font-size: 18px;
         word-break: break-word;
+        text-shadow: 1px 1px 2px $ColorBlack10;
     }
 }
