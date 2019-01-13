@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './RankingTab.scss';
+import '../css/rankingTab.scss';
 
 const RankingTab = (rankingTabItemsJSON: any) => {
     return (

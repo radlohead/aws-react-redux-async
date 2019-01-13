@@ -7,7 +7,7 @@ import { createLogger } from 'redux-logger';
 
 import App from './containers/App';
 import reducer from './reducers';
-import './index.scss';
+import './css/index.scss';
 
 const logger = createLogger();
 const store = createStore(

@@ -1,0 +1,67 @@
+@import './common.scss';
+
+.ranking__tab {
+    border-bottom: 1px solid $ColorBlack20;
+    font-size: 30px;
+    color: $ColorBlueBase;
+}
+
+.ranking__tab__item {
+    overflow: hidden;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid $ColorBlack20;
+}
+
+.ranking__tab__index {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 35px;
+    height: 33px;
+    margin: 10px 10px 0;
+    font-weight: bold;
+
+    &.ranking__1,
+    &.ranking__2,
+    &.ranking__3 {
+        text-indent: -9999px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &.ranking__1 {
+        background-image: url('../img/ranking_1.png');
+
+    }
+
+    &.ranking__2 {
+        background-image: url('../img/ranking_2.png');
+        
+    }
+
+    &.ranking__3 {
+        background-image: url('../img/ranking_3.png');
+        
+    }
+}
+
+.ranking__tab__img {
+    float: left;
+    width: 30%;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 10px;
+}
+
+.ranking__tab--right {
+    float: left;
+    margin-left: 15px;
+    transform: translateY(50%);
+
+    &__description {
+        display: block;
+        margin-top: 15px;
+        color: $ColorBlack10;
+        font-size: 12px;
+    }
+}

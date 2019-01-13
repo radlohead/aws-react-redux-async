@@ -1,0 +1,18 @@
+$ColorWhiteBase: #fff;
+$ColorBlackBase: #333;
+$ColorBlack10: #777;
+$ColorBlack20: #d8d8d8;
+$ColorBlack30: #f8f8f8;
+$ColorRedBase: red;
+$ColorMintBase: #0eaeb9;
+$ColorBlueBase: blue;
+
+$fontSizeBase: 14px;
+
+.clear__after {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}

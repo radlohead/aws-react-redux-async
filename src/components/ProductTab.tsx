@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './ProductTab.scss';
+import '../css/productTab.scss';
 
 const ProductTab = (productTabItemsJSON: any) => {
     return (

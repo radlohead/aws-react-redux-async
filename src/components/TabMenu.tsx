@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as moment from 'moment';
-import './TabMenu.scss';
+import '../css/tabMenu.scss';
 
 const TabMenu = ({ currentTab, onCurrentTab }: any) => {
     return (

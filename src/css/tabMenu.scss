@@ -1,0 +1,51 @@
+@import './common.scss';
+
+.tab__header {
+    max-height: 100px;
+    padding: 10px 15px;
+    border-bottom: 1px solid $ColorBlack20;
+    background-color: $ColorBlack30;
+
+    @extend .clear__after;
+}
+
+.tab__header--left {
+    float: left;
+    padding-top: 10px;
+
+    &__title {
+        margin-right: 10px;
+    }
+
+    &__date {
+        color: $ColorBlack10;
+        font-size: 12px;
+    }
+}
+
+.tab__header__menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @extend .clear__after;
+
+    li {
+        display: block;
+        float: left;
+        padding: 10px 15px;
+        border: 1px solid $ColorBlack20;
+        background-color: $ColorBlack30;
+        cursor: pointer;
+
+        &.active {
+            background-color: $ColorWhiteBase;
+            color: $ColorMintBase;
+        }
+
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+    }
+}

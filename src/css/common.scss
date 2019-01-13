@@ -1,0 +1,21 @@
+@import './define.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    color: $ColorBlackBase;
+    font-size: $fontSizeBase;
+  }
+
+  ul, ol, li {
+    list-style: none;
+  }
+
+  em {
+    font-style: normal;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: $ColorWhiteBase;
+  }
