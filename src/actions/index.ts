@@ -42,10 +42,10 @@ export const fetchRankingTabItems = () => (dispatch: any) => {
 }
 
 export const fetchItemsNeed = () => (dispatch: any) => {
-    return (
+    Promise.all([
         dispatch(fetchProductTabItems()),
         dispatch(fetchRankingTabItems())
-    )
+    ]);
 }
 
 

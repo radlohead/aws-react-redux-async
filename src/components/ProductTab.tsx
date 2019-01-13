@@ -2,7 +2,6 @@ import * as React from 'react';
 import './ProductTab.scss';
 
 const ProductTab = (productTabItemsJSON: any) => {
-    console.log('ProductTab', productTabItemsJSON.json);
     return (
         <div className='product__tab'>
             <ul className="product__list">

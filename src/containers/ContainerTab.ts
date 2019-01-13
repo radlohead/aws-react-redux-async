@@ -7,9 +7,9 @@ const mapStateToProps = (state: any): any => {
     
     if (state) {
         result = {
-            currentTab: state ? state.currentTab : 'PRODUCT_TAB',
-            productTabItemsJSON: state && state.productTabItemsJSON,
-            rankingTabItemsJSON: state && state.rankingTabItemsJSON
+            currentTab: state.currentTab,
+            productTabItemsJSON: state.productTabItemsJSON,
+            rankingTabItemsJSON: state.rankingTabItemsJSON
         }
     }
 
