@@ -11,6 +11,11 @@
     position: relative;
     padding: 10px 0 15px;
     border-bottom: 1px solid $ColorBlack20;
+
+    .ranking__tab__item__href {
+        display: block;
+        overflow: hidden;
+    }
 }
 
 .ranking__tab__index {

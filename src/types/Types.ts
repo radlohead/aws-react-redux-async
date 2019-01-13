@@ -11,7 +11,7 @@ export interface IProductTabItemsData {
     };
     liked: boolean;
     likedCount: number;
-    mobileUrl: number;
+    mobileUrl: string;
     price: number;
     shopId: string;
     shopName: string;

@@ -57,6 +57,11 @@
         margin-left: 0;
     }
 
+    .product__tab__list__item__href {
+        display: block;
+        height: 100%;
+    }
+
     .product__tab__list__item__price {
         position: absolute;
         z-index: 1;
