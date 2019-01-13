@@ -12,6 +12,8 @@ const reducers = (state = initialState, action: Types.IDailyLook): Types.IDailyL
                 ...state,
                 ...action
             }
+        default:
+            return state;
     }
 }
 

@@ -5,14 +5,17 @@ import ProductTab from './ProductTab';
 import RankingTab from './RankingTab';
 import TabMenu from './TabMenu';
 
-const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: Types.IComponentsList): JSX.Element => {
+const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: Types.IComponentsList): JSX.Element|null => {
+    if (!productTabItemsJSON || !rankingTabItemsJSON) { 
+        return null; 
+    }
+
     return (
         <>
-            {productTabItemsJSON && 
-                <TabMenu 
-                    currentTab={currentTab}
-                    onCurrentTab={onCurrentTab}
-            />}
+            <TabMenu 
+                currentTab={currentTab}
+                onCurrentTab={onCurrentTab} 
+            />
             {currentTab === PRODUCT_TAB &&  <ProductTab json={productTabItemsJSON} />}
             {currentTab === RANKING_TAB && <RankingTab json={rankingTabItemsJSON} />}
         </>

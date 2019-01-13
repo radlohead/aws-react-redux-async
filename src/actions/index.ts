@@ -21,12 +21,8 @@ export const receiveProductTabItems = (json: Types.IProductTabItemsJSON): Types.
 
 export const fetchProductTabItems = () => (dispatch: Dispatch): Promise<Types.IFetchProductTabItems> => {
     return fetch('http://localhost:3003/data')
-        .then(response => {
-            return response.json();
-        })
-        .then(json => {
-            return dispatch(receiveProductTabItems(json));
-        });
+        .then(response => response.json())
+        .then(json => dispatch(receiveProductTabItems(json)));
 }
 
 export const receiveRankingTabItems = (json: Types.IRankingTabItemJSON): Types.IFetchRankingTabItems => {
@@ -38,15 +34,11 @@ export const receiveRankingTabItems = (json: Types.IRankingTabItemJSON): Types.I
 
 export const fetchRankingTabItems = () => (dispatch: Dispatch): Promise<Types.IFetchRankingTabItems> => {
     return fetch('http://localhost:3004/data')
-        .then(response => {
-            return response.json();
-        })
-        .then(json => {
-            return dispatch(receiveRankingTabItems(json));
-        });
+        .then(response => response.json())
+        .then(json => dispatch(receiveRankingTabItems(json)));
 }
 
-export const fetchItemsCall = () => (dispatch: Dispatch<any> ): void => {
+export const fetchItemsCall = () => (dispatch: Dispatch<any> ): void|any => {
     Promise.all([
         dispatch(fetchProductTabItems()),
         dispatch(fetchRankingTabItems())
