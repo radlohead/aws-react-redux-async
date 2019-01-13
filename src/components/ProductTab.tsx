@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as numeral from 'numeral';
 import * as Types from '../types/Types';
 import '../css/productTab.scss';
 
@@ -10,9 +11,9 @@ const productTabItemsRowList = (v: Types.IProductTabItemsData, i: number, index:
                     <em className="product__tab__list__item__description__title">{v.title}</em>
                 </span>}
         {(i+3) % 3 !== 0 || index !== 0  // 큰이미지 있는 라인 작은사이즈 이미지
-            && <span className="product__tab__list__item__price">{v.price}</span>}
+            && <span className="product__tab__list__item__price">{numeral(v.price).format()}원</span>}
         {(i+3) % 3 !== 0  // 작은이미지만 있는 라인
-            && <span className="product__tab__list__item__price">{v.price}</span>}
+            && <span className="product__tab__list__item__price">{numeral(v.price).format()}원</span>}
         <img className="product__tab__list__item__img" src={v.image.url} alt={v.title} />
     </li>;
 }
