@@ -38,7 +38,7 @@ export const fetchRankingTabItems = () => (dispatch: Dispatch): Promise<Types.IF
         .then(json => dispatch(receiveRankingTabItems(json)));
 }
 
-export const fetchItemsCall = () => (dispatch: Dispatch<any> ): void|any => {
+export const fetchItemsCall = () => (dispatch: Dispatch<any> ): void => {
     Promise.all([
         dispatch(fetchProductTabItems()),
         dispatch(fetchRankingTabItems())
