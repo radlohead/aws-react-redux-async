@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { PRODUCT_TAB, RANKING_TAB } from '../actions';
+import * as Types from '../types/Types';
 import ProductTab from './ProductTab';
 import RankingTab from './RankingTab';
 import TabMenu from './TabMenu';
 
-const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: any) => {
+const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: Types.IComponentsList): JSX.Element => {
     return (
         <>
             {productTabItemsJSON && 

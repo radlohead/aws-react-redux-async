@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import * as actions from '../actions';
+import * as Types from '../types/Types';
 import ComponentsList from '../components/ComponentsList';
 
-const mapStateToProps = (state: any): any => {
-    let result: any = {};
-    
+const mapStateToProps = (state: Types.IDailyLook|undefined): Types.IDailyLook|{} => {
     if (state) {
-        result = {
+        return {
             currentTab: state.currentTab,
             productTabItemsJSON: state.productTabItemsJSON,
             rankingTabItemsJSON: state.rankingTabItemsJSON
         }
+    } else {
+        return state = {};
     }
-
-    return result;
 }
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
         onCurrentTab: (tabName: string) => dispatch(actions.currentTab(tabName))
     }

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as moment from 'moment';
 import { PRODUCT_TAB, RANKING_TAB } from '../actions';
+import * as Types from '../types/Types';
 import '../css/tabMenu.scss';
 
-const TabMenu = ({ currentTab, onCurrentTab }: any) => {
+const TabMenu = ({ currentTab, onCurrentTab }: Types.ITabMenu): JSX.Element => {
     return (
         <>
             <div className="tab__header">
