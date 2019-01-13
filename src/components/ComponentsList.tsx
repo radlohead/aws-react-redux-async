@@ -7,7 +7,7 @@ import TabMenu from './TabMenu';
 
 const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: Types.IComponentsList): JSX.Element|null => {
     if (!productTabItemsJSON || !rankingTabItemsJSON) { 
-        return null; 
+        return null;
     }
 
     return (

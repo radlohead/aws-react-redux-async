@@ -9,38 +9,20 @@
 .product__tab__list {
     overflow: hidden;
 
-    &:nth-child(6n+1) {
-        .product__tab__list__item {
-            &:first-child {
-                width: 66.5vw;
-                height: 66.5vw;
-            }
+    .product__tab__list__item {
+        &:nth-child(9n+1) {
+            width: 66.5vw;
+            height: 66.5vw;
+            margin-left: 0;
         }
-    }
 
-    &:nth-child(6n+4) {
-        .product__tab__list__item {
-            &:first-child {
-                float: right;
-                width: 66.5vw;
-                height: 66.5vw;
+        &:nth-child(9n+4) {
+            clear: both;
+            margin-left: 0;
+        }
 
-                .product__tab__list__item__description {
-                    text-align: right;
-                    left: auto;
-                    right: 15px;
-                }
-            }
-
-            &:not(:first-child) {
-                margin-left: 0;
-                margin-right: 0.5vw;
-
-                .product__tab__list__item__price {
-                    left: auto;
-                    right: 15px;
-                }
-            }
+        &:nth-child(9n+7) {
+            margin-left: 0;
         }
     }
 }
