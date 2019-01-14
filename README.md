@@ -18,7 +18,7 @@ node.js 사이트에서 node.js installer를 다운로드 합니다. <a href="ht
 
 <img src="images/node_install.png" width="500" />
 
-Node.js 설치화면 입니다. 현재 자신의 컴퓨터 운영체제를 확인 후 다운로드는 LTS, 현재버전 아무거나 설치하시면 됩니다.
+Node.js 설치화면 입니다. 현재 자신의 컴퓨터 운영체제를 확인 후 다운로드는 현재버전으로 설치해주세요 11.6 버전으로 설치!
 
 ### 3. github에 제출한 과제 설치하기
 
