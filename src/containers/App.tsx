@@ -1,12 +1,15 @@
 import * as React from 'react';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import ContainerTab from './ContainerTab';
-import { fetchItemsCall } from '../actions';
+import * as actions from '../actions';
 
 class App extends React.Component {
-    public componentDidMount(): void {
-        const { dispatch }: any = this.props;
-        dispatch(fetchItemsCall());
+    constructor(props: any) {
+        super(props);
+
+        const { fetchItemsCall }: any = props;
+        fetchItemsCall();
     }
 
     public render(): JSX.Element {
@@ -18,4 +21,10 @@ class App extends React.Component {
     }
 }
 
-export default connect(null)(App);
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+    return {
+        fetchItemsCall: () => dispatch(actions.fetchItemsCall())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(App);
