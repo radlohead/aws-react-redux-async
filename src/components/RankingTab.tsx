@@ -8,7 +8,7 @@ const RankingTab = (rankingTabItemsJSON: Types.IRankingTab|any): JSX.Element => 
             <ol>
                 {rankingTabItemsJSON.json.map((v: Types.IRankingTabItemsData, i: number): JSX.Element => {
                     return (
-                        <li key={i} className='ranking__tab__item'>
+                        <li key={v.id} className='ranking__tab__item'>
                             <a className="ranking__tab__item__href" href={v.url}>
                                 <em className={'ranking__tab__index ' + (i <= 2 ? `ranking__${i+1}` : '')}>{i+1}</em>
                                 <img className='ranking__tab__img' src={v.image.url} alt={v.name} />

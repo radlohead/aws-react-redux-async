@@ -8,7 +8,7 @@ const ProductTab = (productTabItemsJSON: Types.IProductTab|any): JSX.Element => 
         <div className='product__tab'>
             <ul className="product__tab__list">
                 {productTabItemsJSON.json.map((v: Types.IProductTabItemsData, i: number): JSX.Element => { 
-                    return <li key={i} className="product__tab__list__item">
+                    return <li key={v.id} className="product__tab__list__item">
                             <a className="product__tab__list__item__href" href={v.mobileUrl}>
                                 {(i === 0 || i%9 === 0) // 큰이미지
                                     && <span className="product__tab__list__item__description">
