@@ -77,10 +77,11 @@ export interface IDailyLook {
 }
 
 export interface IComponentsList {
-    currentTab?: string;
+    currentTab: string;
+    type: string;
     onCurrentTab(tabName: string): void;
-    productTabItemsJSON?: IProductTabItemsJSON[];
-    rankingTabItemsJSON?: IRankingTabItemJSON[];
+    productTabItemsJSON: IProductTabItemsJSON[];
+    rankingTabItemsJSON: IRankingTabItemJSON[];
 }
 
 export interface ITabMenu {

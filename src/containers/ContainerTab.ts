@@ -4,15 +4,12 @@ import * as actions from '../actions';
 import * as Types from '../types/Types';
 import ComponentsList from '../components/ComponentsList';
 
-const mapStateToProps = (state: Types.IDailyLook|undefined): Types.IDailyLook|{} => {
-    if (state) {
-        return {
-            currentTab: state.currentTab,
-            productTabItemsJSON: state.productTabItemsJSON,
-            rankingTabItemsJSON: state.rankingTabItemsJSON
-        }
-    } else {
-        return state = {};
+const mapStateToProps = (state: Types.IDailyLook = {}) => {
+    return {
+        currentTab: state.currentTab,
+        type: state.type,
+        productTabItemsJSON: state.productTabItemsJSON,
+        rankingTabItemsJSON: state.rankingTabItemsJSON
     }
 }
 
