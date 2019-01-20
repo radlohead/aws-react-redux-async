@@ -1,4 +1,4 @@
-import { PRODUCT_TAB, DAILYLOOK, PRODUCT_IS_FETCHED, RANKING_IS_FETCHED } from '../actions';
+import { PRODUCT_TAB, DAILYLOOK, PRODUCT_IS_FETCHED, RANKING_IS_FETCHED } from '../actions/ActionTypes';
 import * as Types from '../types/Types';
 
 const initialState = {

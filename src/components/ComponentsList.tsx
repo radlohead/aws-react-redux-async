@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PRODUCT_TAB, RANKING_TAB } from '../actions';
+import { PRODUCT_TAB, RANKING_TAB } from '../actions/ActionTypes';
 import * as Types from '../types/Types';
 import ProductTab from './ProductTab';
 import RankingTab from './RankingTab';
