@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -9,7 +9,13 @@ import App from './containers/App';
 import reducer from './reducers';
 import './css/index.scss';
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+declare let window: any;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true, traceLimit: 25 }) || compose;
+const store = createStore(
+	reducer, 
+	composeEnhancers(applyMiddleware(thunk, logger))
+);
 
 ReactDOM.render(
 	<Provider store={store}>

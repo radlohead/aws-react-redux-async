@@ -71,6 +71,7 @@
     "@types/redux-logger": "^3.0.6",
     "@types/redux-thunk": "^2.1.0",
     "axios": "^0.18.0",
+    "redux-devtools-extension": "^2.13.7",
     "typescript": "^3.2.2"
   },
   "jest": {
