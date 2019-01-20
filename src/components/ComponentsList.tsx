@@ -5,8 +5,12 @@ import ProductTab from './ProductTab';
 import RankingTab from './RankingTab';
 import TabMenu from './TabMenu';
 
-const ComponentsList = (state: Types.IComponentsList): JSX.Element => {
-    const { currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON } = state;
+const ComponentsList = (state: Types.IComponentsList): JSX.Element|null => {
+    const { currentTab, onCurrentTab, productTabItemsJSON = [], rankingTabItemsJSON = [] }: Types.IComponentsList = state;
+    
+    if (productTabItemsJSON.length === 0) {
+        return null;
+    }
 
     return (
         <>
@@ -14,7 +18,7 @@ const ComponentsList = (state: Types.IComponentsList): JSX.Element => {
                 currentTab={currentTab}
                 onCurrentTab={onCurrentTab} 
             />
-            {currentTab === PRODUCT_TAB &&  <ProductTab json={productTabItemsJSON} />}
+            {currentTab === PRODUCT_TAB && <ProductTab json={productTabItemsJSON} />}
             {currentTab === RANKING_TAB && <RankingTab json={rankingTabItemsJSON} />}
         </>
     )
