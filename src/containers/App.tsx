@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ContainerTab from './ContainerTab';
 import * as actions from '../actions';
 
-class App extends React.Component {
+class App extends React.PureComponent {
     constructor(props: any) {
         super(props);
 
