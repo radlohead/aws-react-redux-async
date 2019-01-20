@@ -19,13 +19,13 @@ const reducers = (state = initialState, action: Types.IDailyLook) => {
         case PRODUCT_IS_FETCHED:
             return {
                 ...state,
-                type: action.currentTab,
+                type: action.type,
                 productTabItemsJSON: action.productTabItemsJSON
             }
         case RANKING_IS_FETCHED:
             return {
                 ...state,
-                type: action.currentTab,
+                type: action.type,
                 rankingTabItemsJSON: action.rankingTabItemsJSON
             }
         default:
