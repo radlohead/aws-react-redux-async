@@ -5,7 +5,9 @@ import ProductTab from './ProductTab';
 import RankingTab from './RankingTab';
 import TabMenu from './TabMenu';
 
-const ComponentsList = ({currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON}: Types.IComponentsList): JSX.Element|null => {
+const ComponentsList = (state: Types.IComponentsList): JSX.Element => {
+    const { currentTab, onCurrentTab, productTabItemsJSON, rankingTabItemsJSON } = state;
+
     return (
         <>
             <TabMenu 
