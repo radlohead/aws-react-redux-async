@@ -8,14 +8,25 @@ const initialState = {
     rankingTabItemsJSON: []
 }
 
-const reducers = (state = initialState, action: Types.IDailyLook): Types.IDailyLook|{ currentTab: string }|undefined => {
+const reducers = (state = initialState, action: Types.IDailyLook) => {
     switch(action.type) {
         case DAILYLOOK:
+            return {
+                ...state,
+                type: action.type,
+                currentTab: action.currentTab || state.currentTab
+            }
         case PRODUCT_IS_FETCHED:
+            return {
+                ...state,
+                type: action.currentTab,
+                productTabItemsJSON: action.productTabItemsJSON
+            }
         case RANKING_IS_FETCHED:
             return {
                 ...state,
-                ...action
+                type: action.currentTab,
+                rankingTabItemsJSON: action.rankingTabItemsJSON
             }
         default:
             return state;
