@@ -5,7 +5,7 @@ import '../css/rankingTab.scss';
 const RankingTab = (rankingTabItemsJSON: Types.IRankingTab|any): JSX.Element => {
     return (
         <div className='ranking__tab'>
-            <ul>
+            <ol>
                 {rankingTabItemsJSON.json.map((v: Types.IRankingTabItemsData, i: number): JSX.Element => {
                     return (
                         <li key={i} className='ranking__tab__item'>
@@ -20,7 +20,7 @@ const RankingTab = (rankingTabItemsJSON: Types.IRankingTab|any): JSX.Element => 
                         </li>
                     )
                 })}
-            </ul>
+            </ol>
         </div>
     )
 }
