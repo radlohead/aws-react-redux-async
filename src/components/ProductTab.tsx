@@ -3,7 +3,7 @@ import * as numeral from 'numeral';
 import * as Types from '../types/Types';
 import '../css/productTab.scss';
 
-const ProductTab = (productTabItemsJSON: Types.IProductTab|any): JSX.Element => {
+const ProductTab = (productTabItemsJSON: Types.IProductTab): JSX.Element => {
     return (
         <div className='product__tab'>
             <ul className="product__tab__list">

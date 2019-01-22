@@ -7,8 +7,8 @@ import * as actions from '../actions';
 class App extends React.PureComponent {
     constructor(props: any) {
         super(props);
-
-        const { fetchItemsCall }: any = props;
+        
+        const { fetchItemsCall } = props;
         fetchItemsCall();
     }
 

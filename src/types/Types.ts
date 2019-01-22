@@ -1,6 +1,6 @@
 export interface ICurrentTab {
-    type: string;
     currentTab: string;
+    type: string;
 }
 
 export interface IProductTabItemsData {
@@ -27,7 +27,8 @@ export interface IProductTabItemsJSON {
 }
 
 export interface IProductTab {
-    productTabItemsJSON: {
+    json: IProductTabItemsData[];
+    productTabItemsJSON?: {
         json: IProductTabItemsData[]
     };
 }
@@ -59,7 +60,8 @@ export interface IRankingTabItemJSON {
 }
 
 export interface IRankingTab {
-    rankingTabItemsJSON: {
+    json: IRankingTabItemsData[];
+    rankingTabItemsJSON?: {
         json: IRankingTabItemsData[]
     };
 }
@@ -70,18 +72,18 @@ export interface IFetchRankingTabItems {
 }
 
 export interface IDailyLook {
+    currentTab?: string|undefined;
     type?: string;
-    currentTab?: string;
-    productTabItemsJSON?: IProductTabItemsJSON;
-    rankingTabItemsJSON?: IRankingTabItemJSON;
+    productTabItemsJSON?: IProductTabItemsData[]|[];
+    rankingTabItemsJSON?: IRankingTabItemsData[]|[];
 }
 
 export interface IComponentsList {
     currentTab: string;
     type: string;
     onCurrentTab(tabName: string): void;
-    productTabItemsJSON: IProductTabItemsJSON[];
-    rankingTabItemsJSON: IRankingTabItemJSON[];
+    productTabItemsJSON: IProductTabItemsData[]|[];
+    rankingTabItemsJSON: IRankingTabItemsData[]|[];
 }
 
 export interface ITabMenu {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as Types from '../types/Types';
 import '../css/rankingTab.scss';
 
-const RankingTab = (rankingTabItemsJSON: Types.IRankingTab|any): JSX.Element => {
+const RankingTab = (rankingTabItemsJSON: Types.IRankingTab): JSX.Element => {
     return (
         <div className='ranking__tab'>
             <ol>
