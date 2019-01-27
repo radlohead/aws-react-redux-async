@@ -11,44 +11,36 @@ export const currentTab = (tabName: string): Types.ICurrentTab => {
 }
 
 export const fetchProductTabItems = () => {
-    return (dispatch: Dispatch): void => {
-        dispatch({
-            type: types.DAILYLOOK
-        });
-        axios.get('http://localhost:3003/data')
-            .then(({ data }: AxiosResponse<Types.IProductTabItemsData>) => {
-                dispatch({
-                    type: types.PRODUCT_IS_FETCHED,
-                    productTabItemsJSON: data
-                });
-            })
-            .catch((err: Error) => {
-                dispatch({
-                    type: types.PRODUCT_IS_ERROR,
-                    productTabItemsJSON: err
-                });
-            })
+    return async (dispatch: Dispatch) => {
+        const response: AxiosResponse<Types.IProductTabItemsData> = await axios.get('http://localhost:3003/data');
+        try {
+            dispatch({
+                type: types.PRODUCT_IS_FETCHED,
+                productTabItemsJSON: response.data
+            });
+        } catch(err) {
+            dispatch({
+                type: types.PRODUCT_IS_ERROR,
+                productTabItemsJSON: err
+            });
+        }
     }
 }
 
 export const fetchRankingTabItems = () => {
-    return (dispatch: Dispatch): void => {
-        dispatch({
-            type: types.DAILYLOOK
-        });
-        axios.get('http://localhost:3004/data')
-            .then(({ data }: AxiosResponse<Types.IRankingTabItemsData>) => {
-                dispatch({
-                    type: types.RANKING_IS_FETCHED,
-                    rankingTabItemsJSON: data
-                });
-            })
-            .catch((err: Error) => {
-                dispatch({
-                    type: types.RANKING_IS_ERROR,
-                    rankingTabItemsJSON: err
-                });
-            })
+    return async (dispatch: Dispatch) => {
+        const response: AxiosResponse<Types.IRankingTabItemsData> = await axios.get('http://localhost:3004/data')
+        try {
+            dispatch({
+                type: types.RANKING_IS_FETCHED,
+                rankingTabItemsJSON: response.data
+            });
+        } catch(err) {
+            dispatch({
+                type: types.RANKING_IS_ERROR,
+                rankingTabItemsJSON: err
+            });
+        }
     }
 }
 
