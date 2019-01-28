@@ -1,5 +1,10 @@
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import nock from 'nock';
 import * as types from'../../src/actions/ActionTypes';
 import * as actions from '../../src/actions';
+
+const store = configureStore([thunk])();
 
 it('currentTab', () => {
     const result = {
@@ -9,8 +14,13 @@ it('currentTab', () => {
     expect(actions.currentTab(types.PRODUCT_TAB)).toEqual(result);
 });
 
-it('fetchProductTabItems', () => {
-    return expect(actions.fetchProductTabItems()).toBeTruthy();
+it('fetchProductTabItems', async () => {
+    nock('http://localhost:3003')
+    .get('/data').once().reply(200);
+    await store.dispatch(actions.fetchProductTabItems());
+
+    expect(store.getActions()[0]).toHaveProperty('type', 'PRODUCT_IS_FETCHED');
+    expect(store.getActions()[0]).toHaveProperty('productTabItemsJSON');
 });
 
 it('fetchRankingTabItems', () => {
