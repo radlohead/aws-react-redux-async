@@ -23,10 +23,22 @@ it('fetchProductTabItems', async () => {
     expect(store.getActions()[0]).toHaveProperty('productTabItemsJSON');
 });
 
-it('fetchRankingTabItems', () => {
-    return expect(actions.fetchRankingTabItems()).toBeTruthy();
+it('fetchRankingTabItems', async () => {
+    nock('http://localhost:3004')
+    .get('/data').once().reply(200);
+    await store.dispatch(actions.fetchRankingTabItems());
+
+    expect(store.getActions()[1]).toHaveProperty('type', 'RANKING_IS_FETCHED');
+    expect(store.getActions()[1]).toHaveProperty('rankingTabItemsJSON');
 });
 
-it('fetchItemsCall', () => {
-    return expect(actions.fetchItemsCall()).toBeTruthy();
+it('fetchItemsCall', async () => {
+    nock('http://localhost:3003')
+    .get('/data').once().reply(200);
+    nock('http://localhost:3004')
+    .get('/data').once().reply(200);
+    await store.dispatch(actions.fetchItemsCall());
+    
+    expect(store.getActions()[0]).toHaveProperty('type', 'PRODUCT_IS_FETCHED');
+    expect(store.getActions()[1]).toHaveProperty('type', 'RANKING_IS_FETCHED');
 });
