@@ -17,7 +17,7 @@ const ProductTab = (productTabItemsJSON: Types.IProductTab): JSX.Element => {
                                         </span>}
                                 {(i !== 0 && i%9 !== 0) // 작은이미지
                                     && <span className="product__tab__list__item__price">{numeral(v.price).format()}원</span>}
-                                <img className="product__tab__list__item__img" src={v.image.url} alt={v.title} />
+                                <img className="product__tab__list__item__img" src={v.imageurl} alt={v.title} />
                             </a>
                     </li>})}
             </ul>

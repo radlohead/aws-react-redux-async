@@ -5,10 +5,8 @@ export interface ICurrentTab {
 
 export interface IProductTabItemsData {
     id: string;
-    image: {
-        id: number,
-        url: string
-    };
+    imageid: number;
+    imageurl: string;
     liked: boolean;
     likedCount: number;
     mobileUrl: string;
@@ -41,10 +39,8 @@ export interface IFetchProductTabItems {
 export interface IRankingTabItemsData {
     description: string;
     id: string;
-    image: {
-        id: number;
-        url: string;
-    };
+    imageid: number;
+    imageurl: string;
     liked: boolean;
     name: string;
     secondName: null;
