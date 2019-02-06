@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as moment from 'moment';
+import classNames from 'classnames';
 import { PRODUCT_TAB, RANKING_TAB } from '../actions/ActionTypes';
 import * as Types from '../types/Types';
 import '../css/tabMenu.scss';
@@ -16,10 +17,10 @@ const TabMenu = ({ currentTab, onCurrentTab }: Types.ITabMenu): JSX.Element => {
                 </div>
                 <ul className='tab__header__menu'>
                     <li 
-                        className={currentTab === PRODUCT_TAB ? 'active' : ''}
+                        className={classNames({'active': currentTab === PRODUCT_TAB})}
                         onClick={() => onCurrentTab(PRODUCT_TAB)}>상품</li>
                     <li 
-                        className={currentTab === RANKING_TAB ? 'active' : ''}
+                        className={classNames({'active': currentTab === RANKING_TAB})}
                         onClick={() => onCurrentTab(RANKING_TAB)}>랭킹</li>
                 </ul>
             </div>
