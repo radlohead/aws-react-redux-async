@@ -1,3 +1,5 @@
+export const BASEURL: string = 'http://mynode2-env.q5kasmz2p2.ap-northeast-2.elasticbeanstalk.com';
+
 export const DAILYLOOK: string = 'DAILYLOOK';
 export const PRODUCT_IS_FETCHED: string = 'PRODUCT_IS_FETCHED';
 export const PRODUCT_IS_ERROR: string = 'PRODUCT_IS_ERROR';
