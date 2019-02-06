@@ -12,7 +12,7 @@ export const currentTab = (tabName: string): Types.ICurrentTab => {
 
 export const fetchProductTabItems = () => {
     return async (dispatch: Dispatch) => {
-        const response: AxiosResponse<Types.IProductTabItemsData> = await axios.get('http://localhost:4000/productTab');
+        const response: AxiosResponse<Types.IProductTabItemsData> = await axios.get('http://mynode2-env.q5kasmz2p2.ap-northeast-2.elasticbeanstalk.com/productTab');
         try {
             dispatch({
                 type: types.PRODUCT_IS_FETCHED,
@@ -29,7 +29,7 @@ export const fetchProductTabItems = () => {
 
 export const fetchRankingTabItems = () => {
     return async (dispatch: Dispatch) => {
-        const response: AxiosResponse<Types.IRankingTabItemsData> = await axios.get('http://localhost:4000/rankingTab')
+        const response: AxiosResponse<Types.IRankingTabItemsData> = await axios.get('http://mynode2-env.q5kasmz2p2.ap-northeast-2.elasticbeanstalk.com/rankingTab')
         try {
             dispatch({
                 type: types.RANKING_IS_FETCHED,
