@@ -1,4 +1,5 @@
-export const BASEURL: string = 'http://mynode2-env.q5kasmz2p2.ap-northeast-2.elasticbeanstalk.com';
+// export const BASEURL: string = 'http://mynode2-env.q5kasmz2p2.ap-northeast-2.elasticbeanstalk.com';
+export const BASEURL: string = 'http://localhost:4000';
 
 export const LOADING: string = 'LOADING';
 export const DAILYLOOK: string = 'DAILYLOOK';

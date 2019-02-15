@@ -2,13 +2,16 @@ const mysql = require('mysql');
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const connection = mysql.createConnection({
-	host     : process.env.RDS_HOSTNAME,
-	user     : process.env.RDS_USERNAME,
-	password : process.env.RDS_PASSWORD,
-	port     : process.env.RDS_PORT,
-	database : process.env.RDS_DB_NAME
-});
+const userInfo = require('./userInfo');
+// const connection = mysql.createConnection({
+// 	host     : process.env.RDS_HOSTNAME,
+// 	user     : process.env.RDS_USERNAME,
+// 	password : process.env.RDS_PASSWORD,
+// 	port     : process.env.RDS_PORT,
+// 	database : process.env.RDS_DB_NAME
+// });
+
+const connection = mysql.createConnection(userInfo);
 
 app.set('port', process.env.PORT || 4000);
 
