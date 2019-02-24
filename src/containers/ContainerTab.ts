@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import * as actions from '../actions';
 import * as Types from '../types/Types';
 import ComponentsList from '../components/ComponentsList';
@@ -15,7 +15,7 @@ const mapStateToProps = (state: Types.IDailyLook = {}) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        onCurrentTab: (tabName: string) => dispatch(actions.currentTab(tabName))
+        onCurrentTab: bindActionCreators(actions.currentTab, dispatch)
     }
 }
 

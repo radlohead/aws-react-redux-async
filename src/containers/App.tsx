@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import ContainerTab from './ContainerTab';
 import * as actions from '../actions';
@@ -23,7 +23,7 @@ class App extends React.PureComponent {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
     return {
-        fetchItemsCall: () => dispatch(actions.fetchItemsCall())
+        fetchItemsCall: bindActionCreators(actions.fetchItemsCall, dispatch)
     }
 }
 
